@@ -1,0 +1,149 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+header  {
+    background-color: salmon;
+    padding: 3rem 1rem 7rem 1rem;
+}
+ 
+
+ul li {
+    text-decoration: none;
+    list-style: none;
+ }
+
+
+ .container {
+    height: 10vw;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+ul li {
+    list-style: none;
+    color: antiquewhite;
+    font-size: 50px;
+    padding-bottom: 5px;
+    transform: translateY(500px);
+    opacity: 0;
+}
+
+input {
+    display: none;
+}
+label {
+    position: fixed;
+    top: 5px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 99;
+}
+label > div {
+    height: 5px;
+    width: 35px;
+    background-color: aliceblue;
+    margin: 5px;
+}
+label:hover > div {
+    background-color: blueviolet;
+}
+#toggle-nav:checked ~ .container {
+    height: 100vh;
+    width: 275px;
+    background-color: #1a1a40;
+    z-index: 1;
+
+}
+#toggle-nav:checked ~label {
+  right:210px;
+
+}
+#toggle-nav:checked ~ .container ul li{
+    transform: translateY(0);
+    opacity: 1;
+}
+/** animacion de la x **/
+
+#toggle-nav:checked ~label > div:nth-child(1){
+    transform: rotate(45deg);
+    margin-top: 18px;
+}
+#toggle-nav:checked ~label > div:nth-child(2) {
+    opacity: 0;
+}
+#toggle-nav:checked ~label > div:nth-child(3) {
+transform: rotate(-45deg);
+margin-top: -20px;
+}
+
+/** transicion **/
+
+ul li {
+    transition: transform 0.6s ease;
+}
+label {
+    transition: 0.7s ease;
+}
+label > div {
+    transition: 0.5s ease;
+}
+.content {
+    color: aliceblue;
+     max-width: 350px;
+     margin: 0 auto ;
+     padding: 5rem 0;
+     
+    
+}
+.container-logo {
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/** Section 1 **/
+
+
+
+
+
+
+
+@media (max-width:320px) {
+
+
+    #toggle-nav:checked ~ .container {
+        height: 100vh;
+        width: 150px;
+        background-color: #1a1a40;
+        z-index: 1;
+    
+    }
+    
+    #toggle-nav:checked ~label {
+        left:110px;
+      
+      }
+    ul li {
+        font-size: 2rem;
+    }
+    
+    .logo {
+        width: 60px;
+    }
+
+
+}
+  
+  
+
+
+
